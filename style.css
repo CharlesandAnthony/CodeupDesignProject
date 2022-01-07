@@ -133,6 +133,9 @@ header{
     .image-footer{
         padding: 10px 5px;
     }
+    #logo1 {
+        width: 65%;
+    }
 }
 
 .badge1 {
