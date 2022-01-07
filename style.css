@@ -112,6 +112,27 @@ header{
     .small-screen-none{
         display: none;
     }
+    .image-footer {
+        padding: 10px 35px;
+    }
+}
+
+@media screen and (max-width:768px){
+    #ipad-apple{
+        width: 100%;
+    }
+    #macbook-image{
+        width: 100%;
+    }
+    #man-image{
+        width: 98%;
+    }
+    #security-image{
+        width: 100%;
+    }
+    .image-footer{
+        padding: 10px 5px;
+    }
 }
 
 .badge1 {
@@ -134,9 +155,9 @@ header{
     background-color: #00ABA9;
 }
 
-.image-footer {
-    padding: 10px 35px;
-}
+/*.image-footer {*/
+/*    padding: 10px 35px;*/
+/*}*/
 
 .abel-font {
     font-family: 'abel';
