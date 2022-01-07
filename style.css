@@ -135,6 +135,8 @@ header{
     }
     #logo1 {
         width: 65%;
+        position: absolute;
+        top: -50px;
     }
 }
 
