@@ -133,3 +133,11 @@ header{
     border-radius: 50%;
     background-color: #00ABA9;
 }
+
+.image-footer {
+    padding: 10px 35px;
+}
+
+.abel-font {
+    font-family: 'abel';
+}
