@@ -69,3 +69,18 @@ header{
 .circle4 {
     background-color: #00ABA9;
 }
+
+.image-border{
+    border: grey solid 7px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width:576px) {
+    #ipad-apple{
+        width: 90%;
+
+    }
+    .small-screen-none{
+        display: none;
+    }
+}
