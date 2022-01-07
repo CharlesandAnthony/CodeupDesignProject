@@ -1,3 +1,7 @@
+body {
+    background-color: lightgray;
+}
+
 #logo {
     max-width: 105px;
     max-height: 105px;
@@ -25,10 +29,43 @@ header{
     font-family: 'abel';
 }
 
-.dot {
-    height: 75px;
-    width: 75px;
-    background-color: #bbb;
+.circle {
+    width: 50%;
     border-radius: 50%;
-    display: inline-block;
+    /*background-color: #b4d455;*/
+    line-height: 0;
+    position: relative;
+    margin: auto;
+}
+
+.circle:after{
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    border: 10px solid white;
+}
+
+.circle-txt{
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+
+.circle1 {
+    background-color: #E6563B;
+}
+
+.circle2 {
+    background-color: #DEA03D;
+}
+
+.circle3 {
+    background-color: #7CB06C;
+}
+
+.circle4 {
+    background-color: #00ABA9;
 }
