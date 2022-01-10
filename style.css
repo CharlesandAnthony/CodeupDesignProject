@@ -134,9 +134,25 @@ header{
         padding: 10px 5px;
     }
     #logo1 {
-        width: 65%;
+        width: 120px;
         position: absolute;
         top: -50px;
+    }
+    .circle-txt{
+        font-size:20px;
+    }
+}
+
+@media screen and (min-width:768px){
+    #logo1{
+        width: 120px;
+    }
+    #top-heading{
+        font-size: 50px;
+    }
+    #logo1{
+        position:absolute;
+        left: 20px;
     }
 }
 
@@ -166,4 +182,15 @@ header{
 
 .abel-font {
     font-family: 'abel';
+}
+#small-nav{
+    max-width: 100%;
+}
+
+#medium-nav{
+    font-family:'abel';
+}
+
+#nav-heading{
+    font-size: 40px;
 }
