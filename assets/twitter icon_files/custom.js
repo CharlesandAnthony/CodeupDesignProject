@@ -1,0 +1,19 @@
+$(function(){$(document).ajaxSend(function(){});$(document).ajaxComplete(function(){});if(($("#account_type_id").val()!='business')){$('.business-addon').addClass("hidden");}
+getCartDetails();$("#cart-popup-dropdown").hide();$(".car-icn").click(function(e){e.preventDefault();$("#cart-popup-dropdown").toggle();return false});$("#billing-address-form").submit(function(e){e.preventDefault();var actionurl=e.currentTarget.action;$.ajax({url:actionurl,type:'post',data:$(this).serialize(),success:function(data){if($.isEmptyObject(data.error)){$(document).find(".edit-form").hide();$(document).find(".address-change").css("display","block");$(document).find(".alert-danger").hide();$(document).find(".address-change").html('');$(document).find(".address-change").html("<h3 class='mb-3'>Billing details"
++"<a class='showBillingForm' href='#'>Edit details</a>"
++"</h3>"
++"<ul>"
++" <li><strong>Address:</strong></li>"
++"<li>"+data.billingAddress.address+"</li>"
++"<li>"+data.billingAddress.postal_code+","+data.billingAddress.city+"</li>"
++"<li>"+data.billingAddress.state+","+data.billingAddress.country+"</li>"
++"</ul>");}else{}},error:function(data){var errors=data.responseJSON;console.log(errors);errorsHtml='<div class="alert alert-danger"><ul>';$.each(errors.errors,function(key,value){errorsHtml+='<li>'+value[0]+'</li>';});errorsHtml+='</ul></div>';console.log(errorsHtml)
+$('#form-errors').css("display","block")
+$('#form-errors').html(errorsHtml);}});});$(document).on("change","#account_type_id",function(){if($(this).val()=='business'){$('.business-addon').removeClass("hidden");}else{$('.business-addon').addClass("hidden");}});$(".delete-mem-cls").click((e)=>{var r=confirm("Are you sure to delete member from your subscription?!");if(r==false){e.preventDefault()}});$(".addCartFrm").submit(function(e){e.preventDefault();var actionurl=e.currentTarget.action;$.ajax({url:actionurl,type:"get",data:$(this).serialize(),beforeSend:function(){$('.loader-wrp').removeClass('hidden')},complete:function(){$('.loader-wrp').addClass('hidden')},success:function(data){if(data.type==1){getCartDetails()}
+$("#cart-popup-dropdown").toggle();setTimeout(function(){$("#cart-popup-dropdown").toggle();},5000);},error:function(xhr,ajaxOptions,thrownError){if(xhr.error=="Unauthenticated.")
+openModal(loginModal);}});});function openModal(modal){$("#wrngModal").modal("hide");$('form').trigger("reset");$('.success').hide();$('.alert-danger').hide();$(modal).modal();}
+$(document).on("click",".remove-product",function(){var currentEvent=$(this);var r=confirm("Are you sure to remove product from your cart?!");if(r==true){$.ajax({type:'POST',url:'/removeCartProduct',data:{id:$(this).data('id')},success:function(data){console.log(currentEvent.parent(".payment-cnt"))
+currentEvent.parent().closest(".payment-cnt").hide();getCartDetails();}});}});});$(document).mouseup(function(e){if($(e.target).closest("#cart-popup-dropdown").length===0){$("#cart-popup-dropdown").hide();}});function getCartDetails(){$.ajax({url:"/checkout-popup",type:'post',data:$(this).serialize(),success:function(data){if(data.total_count==0){$(document).find("#cart-popup-dropdown").html('');$(document).find("#header_cart").hide();}else{$(document).find("#header_cart").show();$(document).find("#cart-popup-dropdown").html('');$(document).find("#cart-popup-dropdown").html(data.html);$(document).find("#top-cart-count").text(data.total_count);}},error:function(){}});}
+$(document).on('click','.btn-checked',function(){$(".btn-checked").removeClass("active");$(this).addClass('active');$('.proceed-btn').removeClass('disabled')
+var slug=$(this).data("slug")
+$(".proceed-btn").prop("href","/checkout?checkoutType=subscribe&code=groupC&plan="+slug)})
