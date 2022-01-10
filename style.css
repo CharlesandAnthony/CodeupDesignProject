@@ -144,6 +144,18 @@ header{
 }
 
 @media screen and (min-width:768px){
+    #ipad-apple{
+        width: 100%;
+    }
+    #macbook-image{
+        width: 100%;
+    }
+    #man-image{
+        width: 98%;
+    }
+    #security-image{
+        width: 100%;
+    }
     #logo1{
         width: 120px;
     }
