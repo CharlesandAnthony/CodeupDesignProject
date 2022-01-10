@@ -18,7 +18,7 @@ body {
 }
 
 header{
-    font-family: 'anton';
+    font-family: 'anton', 'sans-serif';
 }
 
 #top-heading{
@@ -26,7 +26,7 @@ header{
 }
 
 #nav-list{
-    font-family: 'abel';
+    font-family: 'abel', 'sans-serif';
 }
 
 .circle {
@@ -46,24 +46,6 @@ header{
     border: 10px solid white;
 }
 
-.smallcircle {
-    width: 10%;
-    border-radius: 50%;
-    /*background-color: #b4d455;*/
-    line-height: 0;
-    position: relative;
-    margin: auto;
-}
-
-.smallcircle:after{
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-    border-radius: 50%;
-    border: 10px solid white;
-}
-
-
 .circle-txt{
     position: absolute;
     bottom: 50%;
@@ -74,27 +56,27 @@ header{
 
 .circle1 {
     background-color: #E6563B;
-    font-family: 'Anton';
+    font-family: 'Anton', 'sans-serif';
     color: white;
 }
 
 .circle2 {
     background-color: #DEA03D;
-    font-family: 'Anton';
+    font-family: 'Anton', 'sans-serif';
     color: white;
 
 }
 
 .circle3 {
     background-color: #7CB06C;
-    font-family: 'Anton';
+    font-family: 'Anton', 'sans-serif';
     color: white;
 
 }
 
 .circle4 {
     background-color: #00ABA9;
-    font-family: 'Anton';
+    font-family: 'Anton', 'sans-serif';
     color: white;
 
 }
@@ -194,22 +176,21 @@ header{
 /*}*/
 
 .abel-font {
-    font-family: 'abel';
+    font-family: 'abel', 'sans-serif';
+}
+.anton-font {
+    font-family: 'anton', 'sans-serif';
 }
 #small-nav{
     max-width: 100%;
 }
 
 #medium-nav{
-    font-family:'abel';
+    font-family:'abel', 'sans-serif';
 }
 
 #nav-heading{
     font-size: 40px;
-}
-
-.bi-twitter {
-    color: blue;
 }
 
 #twitter-image{
