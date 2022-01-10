@@ -211,3 +211,7 @@ header{
 .bi-twitter {
     color: blue;
 }
+
+#twitter-image{
+    width: 40px;
+}
